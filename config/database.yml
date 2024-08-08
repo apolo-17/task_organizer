@@ -18,10 +18,14 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port: 5433
 
 development:
   <<: *default
   database: task_organizer_development
+  host: localhost
+  user: postgres
+  password:
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -56,6 +60,9 @@ development:
 test:
   <<: *default
   database: task_organizer_test
+  host: localhost:5433
+  user: postgres
+  password:
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
