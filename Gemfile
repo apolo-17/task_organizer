@@ -30,6 +30,7 @@ gem 'hamlit'
 gem 'simple_form'
 gem 'annotate'
 gem 'rails-i18n'
+gem 'devise'
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", ">= 4.0.1"
@@ -69,3 +70,5 @@ group :development do
   # gem "spring"
 end
 
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
